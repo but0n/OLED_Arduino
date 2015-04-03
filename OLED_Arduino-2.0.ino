@@ -1,7 +1,7 @@
 /* 
  * OLED_Arduino.ino
  * 
- * Created by Jack, March 28, 2015.
+ * Created by Jack, March 30, 2015.
  * 
  * FUNCTION: This is a driver program to display some pics or words
  *                    on the OLED screen.
