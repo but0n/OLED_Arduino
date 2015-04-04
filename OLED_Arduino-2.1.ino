@@ -37,19 +37,19 @@ uint8_t a[2][8] = {
 0x00, 0xA0, 0xA0, 0xA0, 0xE0, 0XC0, 0X00, 0x00, 
 0x07, 0x0F, 0x08, 0x08, 0x07, 0X0F, 0x08, 0x00
 };
-uint8_t 0[2][8] = {
+uint8_t n0[2][8] = {
 0xF0, 0xF8, 0x0C, 0xC4, 0x0C, 0xF8, 0xF0, 0x00, 
 0x03, 0x07, 0x0C, 0x08, 0x0C, 0x07, 0x03, 0x00
 };
-uint8_t 1[2][8] = {
+uint8_t n1[2][8] = {
 0x00, 0x10, 0x18, 0xFC, 0xFC, 0x00, 0x00, 0x00, 
 0x00, 0x08, 0x08, 0x0F, 0x0F, 0x08, 0x08, 0x00
 };
-uint8_t 2[2][8] = {
+uint8_t n2[2][8] = {
 0x08, 0x0C, 0x84, 0xC4, 0x64, 0x3C, 0x18, 0x00, 
 0x0E, 0x0F, 0x09, 0x08, 0x08, 0x0C, 0x0C, 0x00
 };
-uint8_t 3[2][8] = {
+uint8_t n3[2][8] = {
 0x08, 0x0C, 0x44, 0x44, 0x44, 0xFC, 0xB8, 0x00, 
 0x04, 0x0C, 0x08, 0x08, 0x08, 0x0F, 0x07, 0x00
 };
@@ -184,16 +184,16 @@ w_cmd (0xAF);
                                               w_data (a[t][n]);
                                               break;
                                               case '0':  
-                                              w_data (0[t][n]);
+                                              w_data (n0[t][n]);
                                               break;
                                               case '1':  
-                                              w_data (1[t][n]);
+                                              w_data (n1[t][n]);
                                               break;
                                               case '2':  
-                                              w_data (2[t][n]);
+                                              w_data (n2[t][n]);
                                               break;
                                               case '3':  
-                                              w_data (3[t][n]);
+                                              w_data (n3[t][n]);
                                               break;
 
                                             }  //switch
