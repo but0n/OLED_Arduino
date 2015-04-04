@@ -23,7 +23,7 @@ typedef struct insert {
 uint8_t page;
 uint8_t start;
 } insert;
-insert in;
+insert in = {0, 0};
 void OLED_INIT ();
 void w_cmd (uint8_t c);
 void w_data (uint8_t d);
