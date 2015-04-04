@@ -28,7 +28,7 @@ void OLED_INIT ();
 void w_cmd (uint8_t c);
 void w_data (uint8_t d);
 void clear_display ();
-void oprint(uint8_t w, insert *in);
+void oprint(uint8_t w, insert *inp);
 void oled_printf(char text[]);
 
 
@@ -171,13 +171,13 @@ w_cmd (0xAF);
                     
                     
                     
-    void oprint(uint8_t w, insert *in){
+    void oprint(uint8_t w, insert *inp){
       
                 uint8_t t, n;
                 for (t = 0; t < 2; t++){
-                            w_cmd (0xB0 + in->page + t);
-                            w_cmd (in->start & 0x0F);
-                            w_cmd (((in->start >> 4) & 0x0F) | 0x10);
+                            w_cmd (0xB0 + inp->page + t);
+                            w_cmd (inp->start & 0x0F);
+                            w_cmd (((inp->start >> 4) & 0x0F) | 0x10);
                             for (n = 0; n < 8; n++){
                                             switch (w){
                                               case 'a':  
@@ -200,12 +200,12 @@ w_cmd (0xAF);
                             }//for
                   }
                   in->start += 8;
-                  if (in->start == 128){
-                          in->start = 0;
-                          in->page += 2;
+                  if (inp->start == 128){
+                          inp->start = 0;
+                          inp->page += 2;
                   }
                   if (in->page == 8){
-                          *in = {0, 0};
+                          *inp = {0, 0};
                           clear_display ();
                   }
     
