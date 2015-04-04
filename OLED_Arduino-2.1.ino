@@ -18,16 +18,19 @@
 #define DC 11  
 #define RST 13
 #define CS 12
-void OLED_INIT ();
-void w_cmd (uint8_t c);
-void w_data (uint8_t d);
-void clear_display ();
-void oprint(uint8_t word, insert *in);
-void oled_printf(char text[]);
+
 typedef struct insert {
 uint8_t page;
 uint8_t start;
 } insert;
+
+void OLED_INIT ();
+void w_cmd (uint8_t c);
+void w_data (uint8_t d);
+void clear_display ();
+void oprint(uint8_t w, insert *in);
+void oled_printf(char text[]);
+
 
 
 uint8_t a[2][8] = {
@@ -54,7 +57,7 @@ uint8_t 3[2][8] = {
     void setup (){
       
       OLED_INIT ();
-      insert in = {0, 0);
+      insert in = {0, 0};
     }
 
     void loop (){
@@ -169,7 +172,7 @@ w_cmd (0xAF);
                     
                     
                     
-    void oprint(uint8_t word, insert *in){
+    void oprint(uint8_t w, insert *in){
       
                 uint8_t t, n;
                 for (t = 0; t < 2; t++){
@@ -177,21 +180,21 @@ w_cmd (0xAF);
                             w_cmd (in->start & 0x0F);
                             w_cmd (((in->start >> 4) & 0x0F) | 0x10);
                             for (n = 0; n < 8; n++){
-                                            switch (word){
+                                            switch (w){
                                               case 'a':  
                                               w_data (a[t][n]);
                                               break;
                                               case '0':  
-                                              w_data (a[t][n]);
+                                              w_data (0[t][n]);
                                               break;
                                               case '1':  
-                                              w_data (a[t][n]);
+                                              w_data (1[t][n]);
                                               break;
                                               case '2':  
-                                              w_data (a[t][n]);
+                                              w_data (2[t][n]);
                                               break;
                                               case '3':  
-                                              w_data (a[t][n]);
+                                              w_data (3[t][n]);
                                               break;
 
                                             }  //switch
@@ -203,7 +206,7 @@ w_cmd (0xAF);
                           in->page = + 2;
                   }
                   if (in->page == 8){
-                          in = {0, 0};
+                          *in = {0, 0};
                           clear_display ();
                   }
     
