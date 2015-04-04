@@ -1,5 +1,5 @@
 /* 
- * OLED_Arduino.ino
+ * OLED_Arduino-2.0.ino
  * 
  * Created by Jack, March 30, 2015.
  * 
