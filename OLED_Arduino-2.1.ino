@@ -154,7 +154,7 @@ uint8_t a[2][8] = {
                             w_cmd (start & 0x0F);
                             w_cmd (((start >> 4) & 0x0F) | 0x10);
                             for (n = 0; n < 8; n++){
-                                            switch (da){
+                                            switch (word){
                                               case 'a':  
                                               w_data (a[t][n]);
                                               break;
