@@ -200,10 +200,10 @@ w_cmd (0xAF);
                                             }  //switch
                             }//for
                   }
-                  in->start = + 8;
+                  in->start += 8;
                   if (in->start == 128){
                           in->start = 0;
-                          in->page = + 2;
+                          in->page += 2;
                   }
                   if (in->page == 8){
                           *in = {0, 0};
