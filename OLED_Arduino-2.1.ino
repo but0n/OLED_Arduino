@@ -22,25 +22,45 @@ void OLED_INIT ();
 void w_cmd (uint8_t c);
 void w_data (uint8_t d);
 void clear_display ();
-void oprint(uint8_t word, uint8_t page, uint8_t start);
-
+void oprint(uint8_t word, insert *in);
+void oled_printf(char text[]);
+typedef struct insert {
+uint8_t page;
+uint8_t start;
+} insert;
 
 
 uint8_t a[2][8] = {
 0x00, 0xA0, 0xA0, 0xA0, 0xE0, 0XC0, 0X00, 0x00, 
 0x07, 0x0F, 0x08, 0x08, 0x07, 0X0F, 0x08, 0x00
 };
-
+uint8_t 0[2][8] = {
+0xF0, 0xF8, 0x0C, 0xC4, 0x0C, 0xF8, 0xF0, 0x00, 
+0x03, 0x07, 0x0C, 0x08, 0x0C, 0x07, 0x03, 0x00
+};
+uint8_t 1[2][8] = {
+0x00, 0x10, 0x18, 0xFC, 0xFC, 0x00, 0x00, 0x00, 
+0x00, 0x08, 0x08, 0x0F, 0x0F, 0x08, 0x08, 0x00
+};
+uint8_t 2[2][8] = {
+0x08, 0x0C, 0x84, 0xC4, 0x64, 0x3C, 0x18, 0x00, 
+0x0E, 0x0F, 0x09, 0x08, 0x08, 0x0C, 0x0C, 0x00
+};
+uint8_t 3[2][8] = {
+0x08, 0x0C, 0x44, 0x44, 0x44, 0xFC, 0xB8, 0x00, 
+0x04, 0x0C, 0x08, 0x08, 0x08, 0x0F, 0x07, 0x00
+};
 
     void setup (){
       
       OLED_INIT ();
-    
+      insert in = {0, 0);
     }
 
     void loop (){
+oled_printf ("a0123");
 
-
+while (1){}
     }
 
           void OLED_INIT (){
@@ -133,7 +153,7 @@ uint8_t a[2][8] = {
               }
                     
                     void clear_display (){
-                     
+                            w_cmd (0xAE);
                             uint8_t x, y; // x = SEG  [0:127]    y = PAGE  [0:7]
                             for (y = 0; y < 8; y++){
                                     w_cmd (0xB0 + y);  // Set Page Number 
@@ -143,27 +163,57 @@ uint8_t a[2][8] = {
                                             w_data (0x00);
                             
                             }
+w_cmd (0xAF);
                     }
                     
                     
                     
                     
-    void oprint(uint8_t word, uint8_t page, uint8_t start){
+    void oprint(uint8_t word, insert *in){
       
                 uint8_t t, n;
                 for (t = 0; t < 2; t++){
-                            w_cmd (0xB0 + page + t);
-                            w_cmd (start & 0x0F);
-                            w_cmd (((start >> 4) & 0x0F) | 0x10);
+                            w_cmd (0xB0 + in->page + t);
+                            w_cmd (in->start & 0x0F);
+                            w_cmd (((in->start >> 4) & 0x0F) | 0x10);
                             for (n = 0; n < 8; n++){
                                             switch (word){
                                               case 'a':  
                                               w_data (a[t][n]);
                                               break;
-                                            }  
-                            }
+                                              case '0':  
+                                              w_data (a[t][n]);
+                                              break;
+                                              case '1':  
+                                              w_data (a[t][n]);
+                                              break;
+                                              case '2':  
+                                              w_data (a[t][n]);
+                                              break;
+                                              case '3':  
+                                              w_data (a[t][n]);
+                                              break;
+
+                                            }  //switch
+                            }//for
+                  }
+                  in->start = + 8;
+                  if (in->start == 128){
+                          in->start = 0;
+                          in->page = + 2;
+                  }
+                  if (in->page == 8){
+                          in = {0, 0};
+                          clear_display ();
                   }
     
     }
+
+void oled_printf(char text[]) {
+int counter;
+for (counter=0; counter < sizeof(text[]); counter++)
+oprint (text[counter], &in);
+
+}
 
                                           
