@@ -187,10 +187,13 @@ uint8_t buff_z[2][8] = {
 
     void loop (){
       clear_display ();
-oled_printf ("0123456789");
+oled_printf ("at an           ");
+oled_printf ("    but0n       ");
 delay (1000);
-clear_display ();
-oled_printf ("                abcdefghijklmnopqrstuvwxyz");
+
+
+
+//oled_printf ("                abcdefghijklmnopqrstuvwxyz");
 
 
 while (1){}
@@ -423,7 +426,7 @@ w_cmd (0xAF);
                                               break;
                                               case ' ':  
                                               w_data (0x00);
-                                              break;
+                                              break;                                       
 
 
                                             }  //switch
@@ -443,7 +446,7 @@ w_cmd (0xAF);
 
 void oled_printf(char text[]) {
 int c;
-for (c = 0; c < sizeof(text); c++)
+for (c = 0; c < 16; c++)
 oprint (text[c], &in);
 
 }
