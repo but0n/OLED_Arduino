@@ -187,9 +187,12 @@ uint8_t buff_z[2][8] = {
 
     void loop (){
       clear_display ();
-oled_printf ("at an           ");
-oled_printf ("    but0n       ");
-delay (1000);
+oled_printf ("      but0n     ");
+oled_printf ("i do not know   ");delay(1000);
+oled_printf ("how many bit    ");
+oled_printf ("the char is     ");
+
+
 
 
 
@@ -437,7 +440,7 @@ w_cmd (0xAF);
                           in->start = 0;
                           in->page += 2;
                   }
-                  if (in->page == 8){
+                  if (in->page == 10 ){
                           *in = {0, 0};
                           clear_display ();
                   }
