@@ -310,7 +310,10 @@ w_cmd (0xAF);
                     
            
     void oprint (uint8_t w, struct insert *in){
-      
+                  if (in->page == 10 ){
+                          *in = {0, 0};
+                          clear_display ();
+                  }
                 uint8_t t, n;
                 for (t = 0; t < 2; t++){
                             w_cmd (0xB0 + in->page + t);
@@ -440,10 +443,7 @@ w_cmd (0xAF);
                           in->start = 0;
                           in->page += 2;
                   }
-                  if (in->page == 10 ){
-                          *in = {0, 0};
-                          clear_display ();
-                  }
+
     
     }
 
