@@ -449,7 +449,7 @@ w_cmd (0xAF);
 
 void oled_printf(char text[]) {
 int c;
-for (c = 0; c < 16; c++)
+for (c = 0; text[c] != NULL; c++)
 oprint (text[c], &in);
 
 }
