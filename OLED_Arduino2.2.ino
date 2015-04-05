@@ -1,5 +1,5 @@
 /* 
- * OLED_Arduino-2.1.ino
+ * OLED_Arduino-2.2.ino
  * 
  * Created by Jack, April 5, 2015.
  * 
@@ -83,6 +83,103 @@ uint8_t buff_b[2][8] = {
 0x04, 0xFC, 0xFC, 0x20, 0x60, 0xC0, 0x80, 0x00, 
 0x00, 0x0F, 0x0F, 0x08, 0x08, 0x0F, 0x07, 0x00
 };
+uint8_t buff_c[2][8] = {
+0xC0, 0xE0, 0x20, 0x20, 0x20, 0x60, 0x40, 0x00, 
+0x07, 0x0F, 0x08, 0x08, 0x08, 0x0C, 0x04, 0x00
+};
+uint8_t buff_d[2][8] = {
+0x80, 0xC0, 0x60, 0x24, 0xFC, 0xFC, 0x00, 0x00, 
+0x07, 0x0F, 0x08, 0x08, 0x07, 0x0F, 0x08, 0x00
+};
+uint8_t buff_e[2][8] = {
+0xC0, 0xE0, 0xA0, 0xA0, 0xA0, 0xE0, 0xC0, 0x00, 
+0x00, 0x0F, 0x08, 0x08, 0x08, 0x0C, 0x04, 0x00
+};
+uint8_t buff_f[2][8] = {
+0x40, 0xF8, 0xFC, 0x44, 0x0C, 0x18, 0x00, 0x00, 
+0x08, 0x0F, 0x0F, 0x08, 0x00, 0x00, 0x00, 0x00
+};
+uint8_t buff_g[2][8] = {
+0xC0, 0xE0, 0x20, 0x20, 0xC0, 0xE0, 0x20, 0x00, 
+0x27, 0x6F, 0x48, 0x48, 0x7F, 0x3F, 0x00, 0x00
+};
+uint8_t buff_h[2][8] = {
+0x04, 0xFC, 0xFC, 0x40, 0x20, 0xE0, 0xC0, 0x00, 
+0x08, 0x0F, 0x0F, 0x00, 0x00, 0x0F, 0x0F, 0x00
+};
+uint8_t buff_i[2][8] = {
+0x00, 0x00, 0x20, 0xEC, 0xEC, 0x00, 0x00, 0x00, 
+0x00, 0x00, 0x08, 0x0F, 0x0F, 0x08, 0x00, 0x00
+};
+uint8_t buff_j[2][8] = {
+0x00, 0x00, 0x00, 0x00, 0x20, 0xEC, 0xEC, 0x00, 
+0x00, 0x30, 0x70, 0x40, 0x40, 0x7F, 0x3F, 0x00
+};
+uint8_t buff_k[2][8] = {
+0x04, 0xFC, 0xFC, 0x80, 0xC0, 0x60, 0x20, 0x00, 
+0x08, 0x0F, 0x0F, 0x01, 0x03, 0x0E, 0x0C, 0x00
+};
+uint8_t buff_l[2][8] = {
+0x00, 0x00, 0x04, 0xFC, 0xFC, 0x00, 0x00, 0x00, 
+0x00, 0x00, 0x08, 0x0F, 0x0F, 0x08, 0x00, 0x00
+};
+uint8_t buff_m[2][8] = {
+0xE0, 0xE0, 0x60, 0xC0, 0x60, 0xE0, 0xC0, 0x00, 
+0x0F, 0x0F, 0x00, 0x07, 0x00, 0x0F, 0x0F, 0x00
+};
+uint8_t buff_n[2][8] = {
+0x20, 0xE0, 0xC0, 0x20, 0x20, 0xE0, 0xC0, 0x00, 
+0x00, 0x0F, 0x0F, 0x00, 0x00, 0x0F, 0x0F, 0x00
+};
+uint8_t buff_o[2][8] = {
+0xC0, 0xE0, 0x20, 0x20, 0x20, 0xE0, 0xC0, 0x00, 
+0x07, 0x0F, 0x08, 0x08, 0x08, 0x0F, 0x07, 0x00
+};
+uint8_t buff_p[2][8] = {
+0x20, 0xE0, 0xC0, 0x20, 0x20, 0xE0, 0xC0, 0x00, 
+0x40, 0x7F, 0x7F, 0x48, 0x08, 0x0F, 0x07, 0x00
+};
+uint8_t buff_q[2][8] = {
+0xC0, 0xE0, 0x20, 0x20, 0xC0, 0xE0, 0x20, 0x00, 
+0x07, 0x0F, 0x08, 0x48, 0x7F, 0x7F, 0x40, 0x00
+};
+uint8_t buff_r[2][8] = {
+0x20, 0xE0, 0xC0, 0x60, 0x20, 0xE0, 0xC0, 0x00, 
+0x08, 0x0F, 0x0F, 0x08, 0x00, 0x00, 0x00, 0x00
+};
+uint8_t buff_s[2][8] = {
+0x40, 0xE0, 0xA0, 0x20, 0x20, 0x60, 0x04, 0x00, 
+0x04, 0x0C, 0x09, 0x09, 0x0B, 0x0E, 0x04, 0x00
+};
+uint8_t buff_t[2][8] = {
+0x20, 0x20, 0xF8, 0xFC, 0x20, 0x20, 0x00, 0x00, 
+0x00, 0x00, 0x07, 0x0F, 0x08, 0x0C, 0x04, 0x00
+};
+uint8_t buff_u[2][8] = {
+0xE0, 0xE0, 0x00, 0x00, 0xE0, 0xE0, 0x00, 0x00, 
+0x07, 0x0F, 0x08, 0x08, 0x07, 0x0F, 0x08, 0x00
+};
+uint8_t buff_v[2][8] = {
+0x00, 0xE0, 0xE0, 0x00, 0x00, 0xE0, 0xE0, 0x00, 
+0x00, 0x03, 0x07, 0x0C, 0x0C, 0x07, 0x03, 0x00
+};
+uint8_t buff_w[2][8] = {
+0xE0, 0xE0, 0x00, 0x80, 0x00, 0xE0, 0xE0, 0x00, 
+0x07, 0x0F, 0x0C, 0x07, 0x0C, 0x0F, 0x07, 0x00
+};
+uint8_t buff_x[2][8] = {
+0x20, 0x60, 0xC0, 0x80, 0xC0, 0x60, 0x20, 0x00, 
+0x08, 0x0C, 0x07, 0x03, 0x07, 0x0C, 0x08, 0x00
+};
+uint8_t buff_y[2][8] = {
+0xE0, 0xE0, 0x00, 0x00, 0x00, 0xE0, 0xE0, 0x00, 
+0x47, 0x4F, 0x48, 0x48, 0x68, 0x3F, 0x1F, 0x00
+};
+uint8_t buff_z[2][8] = {
+0x60, 0x60, 0x20, 0xA0, 0xE0, 0x60, 0x20, 0x00, 
+0x0C, 0x0E, 0x0B, 0x09, 0x08, 0x0C, 0x0C, 0x00
+};
+
     void setup (){
       
       OLED_INIT ();
@@ -90,14 +187,11 @@ uint8_t buff_b[2][8] = {
 
     void loop (){
       clear_display ();
-oled_printf ("a0123");
+oled_printf ("0123456789");
 delay (1000);
 clear_display ();
-oled_printf ("23333");
-oled_printf ("23333");
-oled_printf ("23333");
-oled_printf ("23333");
-oled_printf ("23333");
+oled_printf ("                abcdefghijklmnopqrstuvwxyz");
+
 
 while (1){}
     }
@@ -218,9 +312,7 @@ w_cmd (0xAF);
                             w_cmd (((in->start >> 4) & 0x0F) | 0x10);
                             for (n = 0; n < 8; n++){
                                             switch (w){
-                                              case 'a':  
-                                              w_data (buff_a[t][n]);
-                                              break;
+                                              
                                               case '0':  
                                               w_data (buff_0[t][n]);
                                               break;
@@ -233,6 +325,106 @@ w_cmd (0xAF);
                                               case '3':  
                                               w_data (buff_3[t][n]);
                                               break;
+                                              case '4':  
+                                              w_data (buff_4[t][n]);
+                                              break;
+                                              case '5':  
+                                              w_data (buff_5[t][n]);
+                                              break;
+                                              case '6':  
+                                              w_data (buff_6[t][n]);
+                                              break;
+                                              case '7':  
+                                              w_data (buff_7[t][n]);
+                                              break;
+                                              case '8':  
+                                              w_data (buff_8[t][n]);
+                                              break;
+                                              case '9':  
+                                              w_data (buff_9[t][n]);
+                                              break;
+                                              case 'a':  
+                                              w_data (buff_a[t][n]);
+                                              break;
+                                              case 'b':  
+                                              w_data (buff_b[t][n]);
+                                              break;
+                                              case 'c':  
+                                              w_data (buff_c[t][n]);
+                                              break;
+                                              case 'd':  
+                                              w_data (buff_d[t][n]);
+                                              break;
+                                              case 'e':  
+                                              w_data (buff_e[t][n]);
+                                              break;
+                                              case 'f':  
+                                              w_data (buff_f[t][n]);
+                                              break;
+                                              case 'g':  
+                                              w_data (buff_g[t][n]);
+                                              break;
+                                              case 'h':  
+                                              w_data (buff_h[t][n]);
+                                              break;
+                                              case 'i':  
+                                              w_data (buff_i[t][n]);
+                                              break;
+                                              case 'j':  
+                                              w_data (buff_j[t][n]);
+                                              break;
+                                              case 'k':  
+                                              w_data (buff_k[t][n]);
+                                              break;
+                                              case 'l':  
+                                              w_data (buff_l[t][n]);
+                                              break;
+                                              case 'm':  
+                                              w_data (buff_m[t][n]);
+                                              break;
+                                              case 'n':  
+                                              w_data (buff_n[t][n]);
+                                              break;
+                                              case 'o':  
+                                              w_data (buff_o[t][n]);
+                                              break;
+                                              case 'p':  
+                                              w_data (buff_p[t][n]);
+                                              break;
+                                              case 'q':  
+                                              w_data (buff_q[t][n]);
+                                              break;
+                                              case 'r':  
+                                              w_data (buff_r[t][n]);
+                                              break;
+                                              case 's':  
+                                              w_data (buff_s[t][n]);
+                                              break;
+                                              case 't':  
+                                              w_data (buff_t[t][n]);
+                                              break;
+                                              case 'u':  
+                                              w_data (buff_u[t][n]);
+                                              break;
+                                              case 'v':  
+                                              w_data (buff_v[t][n]);
+                                              break;
+                                              case 'w':  
+                                              w_data (buff_w[t][n]);
+                                              break;
+                                              case 'x':  
+                                              w_data (buff_x[t][n]);
+                                              break;
+                                              case 'y':  
+                                              w_data (buff_y[t][n]);
+                                              break;
+                                              case 'z':  
+                                              w_data (buff_z[t][n]);
+                                              break;
+                                              case ' ':  
+                                              w_data (0x00);
+                                              break;
+
 
                                             }  //switch
                             }//for
