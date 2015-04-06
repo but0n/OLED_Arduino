@@ -183,14 +183,25 @@ uint8_t buff_z[2][8] = {
     void setup (){
       
       OLED_INIT ();
+      clear_display ();
     }
 
     void loop (){
+      oled_printf ("               ");
+      oled_printf ("               ");
+      oled_printf ("     but0n      ");
+      oled_printf ("               ");
+      delay (1200);
       clear_display ();
-oled_printf ("      but0n     ");
-oled_printf ("i do not know   ");delay(1000);
-oled_printf ("how many bit    ");
-oled_printf ("the char is     ");
+      oled_printf ("               ");
+      oled_printf ("   knowledge    ");
+      oled_printf ("       is       ");
+      oled_printf ("     power      ");
+      delay (1200);
+      clear_display ();
+      oled_printf ("abcdefghijklmnopqrstuvwxyz");
+      oled_printf ("0123456789abcdefghijklmnopqrstuvwxyz");
+      oled_printf ("abcdefghijklmnopqrstuvwxyz");
 
 
 
@@ -312,6 +323,7 @@ w_cmd (0xAF);
     void oprint (uint8_t w, struct insert *in){
                   if (in->page == 10 ){
                           *in = {0, 0};
+                          delay (500);
                           clear_display ();
                   }
                 uint8_t t, n;
