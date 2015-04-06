@@ -321,7 +321,7 @@ w_cmd (0xAF);
                     
            
     void oprint (uint8_t w, struct insert *in){
-                  if (in->page == 10 ){
+                  if (in->page > 7 ){
                           *in = {0, 0};
                           delay (500);
                           clear_display ();
@@ -451,7 +451,7 @@ w_cmd (0xAF);
                             }//for
                   }
                   in->start += 8;
-                  if (in->start == 128){
+                  if (in->start >= 128){
                           in->start = 0;
                           in->page += 2;
                   }
