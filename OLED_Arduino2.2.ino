@@ -93,7 +93,7 @@ uint8_t buff_d[2][8] = {
 };
 uint8_t buff_e[2][8] = {
 0xC0, 0xE0, 0xA0, 0xA0, 0xA0, 0xE0, 0xC0, 0x00, 
-0x00, 0x0F, 0x08, 0x08, 0x08, 0x0C, 0x04, 0x00
+0x07, 0x0F, 0x08, 0x08, 0x08, 0x0C, 0x04, 0x00
 };
 uint8_t buff_f[2][8] = {
 0x40, 0xF8, 0xFC, 0x44, 0x0C, 0x18, 0x00, 0x00, 
@@ -188,21 +188,34 @@ uint8_t buff_z[2][8] = {
 
     void loop (){
       oled_printf ("               ");
-      oled_printf ("               ");
       oled_printf ("     but0n      ");
       oled_printf ("               ");
+      oled_printf ("               ");
+
       delay (1200);
       clear_display ();
+      delay (800);
       oled_printf ("               ");
       oled_printf ("   knowledge    ");
       oled_printf ("       is       ");
       oled_printf ("     power      ");
       delay (1200);
       clear_display ();
-      oled_printf ("abcdefghijklmnopqrstuvwxyz");
-      oled_printf ("0123456789abcdefghijklmnopqrstuvwxyz");
-      oled_printf ("abcdefghijklmnopqrstuvwxyz");
-
+      delay (800);
+      oled_printf ("     email      ");
+      oled_printf ("but0n at freeattack com         ");
+      
+      
+      
+      delay (1200);
+      clear_display ();
+      delay (800);
+      oled_printf ("       qq       ");
+      oled_printf ("               ");
+      oled_printf ("    32700567    ");
+      delay (1200);
+      clear_display ();
+      delay (800);
 
 
 
@@ -210,7 +223,7 @@ uint8_t buff_z[2][8] = {
 //oled_printf ("                abcdefghijklmnopqrstuvwxyz");
 
 
-while (1){}
+//while (1){}
     }
 
           void OLED_INIT (){
