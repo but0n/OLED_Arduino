@@ -450,10 +450,10 @@ oprint (' ', &in);
 }
 void prtpage (char c1[], char c2[], char c3[], char c4[]) {
       w_cmd (0xAE);
-      oled_printf (c1[], &in);
-      oled_printf (c2[], &in);
-      oled_printf (c3[], &in);
-      oled_printf (c4[], &in);
+      oled_printf (c1[]);
+      oled_printf (c2[]);
+      oled_printf (c3[]);
+      oled_printf (c4[]);
       w_cmd (0xAF);
       delay (1200);
       clear_display ();
