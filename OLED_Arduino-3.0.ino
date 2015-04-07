@@ -188,9 +188,9 @@ uint8_t buff_z[2][8] = {
     }
 
     void loop (){
-prtpage (, "      but0n", "", "");
-prtpage ("", "    knowledge", "       is", "     power");
-prtpage ("       qq", "", "    32700567", "");
+//prtpage ("", "      but0n", "", "");
+//prtpage ("", "    knowledge", "       is", "     power");
+//prtpage ("       qq", "", "    32700567", "");
 //while (1){}
     }
 
@@ -445,16 +445,16 @@ void oled_printf(char text[]) {
 int c, q;
 for (c = 0; text[c] != NULL; c++)
 oprint (text[c], &in);
-for (q = 0; q < (16 - i); q++)
-oprint (" ", &in);
+for (q = 0; q < (16 - c); q++)
+oprint (' ', &in);
 }
 void prtpage (char c1[], char c2[], char c3[], char c4[]) {
-w_cmd (0xAE);
-oled_printf (c1[], &in);
-oled_printf (c2[], &in);
-oled_printf (c3[], &in);
-oled_printf (c4[], &in);
-w_cmd (0xAF);
+      w_cmd (0xAE);
+      oled_printf (c1[], &in);
+      oled_printf (c2[], &in);
+      oled_printf (c3[], &in);
+      oled_printf (c4[], &in);
+      w_cmd (0xAF);
       delay (1200);
       clear_display ();
       delay (800);
