@@ -1,7 +1,7 @@
 /* 
  * OLED_Arduino-3.0.ino
  * 
- * Created by Jack, April 5, 2015.
+ * Created by Jack, April 7, 2015.
  * 
  * FUNCTION: This is a driver program to display some pics or words
  *                    on the OLED screen.
@@ -188,9 +188,9 @@ uint8_t buff_z[2][8] = {
     }
 
     void loop (){
-//prtpage ("", "      but0n", "", "");
-//prtpage ("", "    knowledge", "       is", "     power");
-//prtpage ("       qq", "", "    32700567", "");
+prtpage ("", "      but0n", "", "");
+prtpage ("", "    knowledge", "       is", "     power");
+prtpage ("       qq", "", "    32700567", "");
 //while (1){}
     }
 
@@ -450,12 +450,12 @@ oprint (' ', &in);
 }
 void prtpage (char c1[], char c2[], char c3[], char c4[]) {
       w_cmd (0xAE);
-      oled_printf (c1[]);
-      oled_printf (c2[]);
-      oled_printf (c3[]);
-      oled_printf (c4[]);
+      oled_printf (c1);
+      oled_printf (c2);
+      oled_printf (c3);
+      oled_printf (c4);
       w_cmd (0xAF);
-      delay (1200);
+      delay (3000);
       clear_display ();
       delay (800);
 }
